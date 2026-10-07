@@ -249,6 +249,15 @@ h3.sub{font-size:16px;color:var(--wine);margin-top:26px}
 .copybox pre{margin:0;padding:10px 12px;font-family:var(--sans);font-size:15px;white-space:pre-wrap;word-break:break-word;user-select:text}
 .copy{border:0;background:var(--ink);color:var(--cream);font-size:13px;padding:3px 12px;border-radius:999px;cursor:pointer}
 
+/* reels */
+.reels{display:grid;gap:10px;margin-top:16px}
+.reel{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--night);color:var(--cream);padding:12px 14px;text-decoration:none}
+.reel .pl{width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center}
+.reel .pl::after{content:"";border-left:13px solid var(--gold);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.reel b{display:block;font-family:var(--serif);font-weight:900;font-size:17px;line-height:1.4}
+.reel small{display:block;font-size:12px;color:var(--cream-2);letter-spacing:.06em}
+.reel .go{font-size:13px;color:var(--gold);white-space:nowrap}
+
 /* rules */
 .rules{list-style:none;margin:14px 0 0;padding:0}
 .rules li{display:grid;grid-template-columns:6.4em 1fr;gap:10px;padding:11px 0;border-top:1px solid var(--rule);font-size:15px}
@@ -313,6 +322,7 @@ h3.sub{font-size:16px;color:var(--wine);margin-top:26px}
     <button type="button" data-go="taste">3 產品分享</button>
     <button type="button" data-go="words">用語字典</button>
     <button type="button" data-go="order">4 結尾點法</button>
+    <button type="button" data-go="refs">參考影片</button>
     <button type="button" data-go="rhythm">拍法節奏</button>
     <button type="button" data-go="caption">資訊欄</button>
     <button type="button" data-go="rules">合作須知</button>
@@ -398,12 +408,13 @@ h3.sub{font-size:16px;color:var(--wine);margin-top:26px}
   <p class="lede">照上桌順序拍，C 位就是這支影片一定要出現的那一道。</p>
   <div class="days ep" id="slotDays"></div>
 
-  <h3 class="sub">老饕上桌，四個必拍畫面</h3>
+  <h3 class="sub">老饕上桌，五個必拍畫面</h3>
   <div class="shots">
-    <div class="shot"><span class="i">1</span><h3>炭火煎出焦香外皮</h3><p>表面的梅納焦痕貼近拍，油花在焦面上發亮最好看，<b>上桌第一秒就拍</b>，熱氣散掉就沒了。</p></div>
-    <div class="shot must"><span class="i">2</span><h3>一刀切開，粉紅切面<span class="mk">必拍</span></h3><p>刀子從中間切下，停兩秒讓切面對鏡頭，<b>切面粉紅、肉汁滲出</b>，是整支影片最重要的一個畫面。</p></div>
-    <div class="shot"><span class="i">3</span><h3>素顏就超美</h3><p>第一口不沾任何醬，只撒一點鹽之花，醬汁放在旁邊入鏡就好，<b>不要淋在肉上</b>。</p></div>
-    <div class="shot must"><span class="i">4</span><h3>高溫鑄鐵石，熟度自己選<span class="mk">必拍</span></h3><p>把切片放上鑄鐵石，<b>請開聲音</b>，冒煙和滋滋聲是現場感最強的收音。</p></div>
+    <div class="shot must"><span class="i">1</span><h3>牛排上火→炭火→烤製→切牛排→肉汁<span class="mk">必拍</span></h3><p>從牛排上火一路拍到切開後的肉汁，照這個順序拍成一組連續畫面，<b>三個主題都要有</b>。</p></div>
+    <div class="shot"><span class="i">2</span><h3>炭火煎出焦香外皮</h3><p>表面的梅納焦痕貼近拍，油花在焦面上發亮最好看，<b>上桌第一秒就拍</b>，熱氣散掉就沒了。</p></div>
+    <div class="shot must"><span class="i">3</span><h3>一刀切開，粉紅切面<span class="mk">必拍</span></h3><p>刀子從中間切下，停兩秒讓切面對鏡頭，<b>切面粉紅、肉汁滲出</b>，是整支影片最重要的一個畫面。</p></div>
+    <div class="shot"><span class="i">4</span><h3>素顏就超美</h3><p>第一口不沾任何醬，只撒一點鹽之花，醬汁放在旁邊入鏡就好，<b>不要淋在肉上</b>。</p></div>
+    <div class="shot must"><span class="i">5</span><h3>高溫鑄鐵石，熟度自己選<span class="mk">必拍</span></h3><p>把切片放上鑄鐵石，<b>請開聲音</b>，冒煙和滋滋聲是現場感最強的收音。</p></div>
   </div>
   <div class="vo ep" id="slotTasteVo"></div>
 </section>
@@ -437,6 +448,13 @@ h3.sub{font-size:16px;color:var(--wine);margin-top:26px}
   <div class="ta" id="slotTa"></div>
   <div class="closing"><small>影片結尾必帶</small><p>上清境、進日月潭前，<br>你一定要安排這一家！</p></div>
   <p class="remind">口播或結尾字幕擇一出現即可，兩者都有更好。套餐內容和單點加點請分開說明。</p>
+</section>
+
+<section id="refs">
+  <div class="eyebrow">參考影片</div>
+  <h2>可以參考創作者怎麼拍</h2>
+  <p class="lede">看的是畫面怎麼拍，口播和文案請照這份指南。</p>
+  <div class="reels" id="reelList"></div>
 </section>
 
 <section id="rhythm">
@@ -640,6 +658,7 @@ var TAGS_BASE = '#大人物牛排 #埔里美食 #埔里牛排 #老饕牛排';
 /* 共用拍攝點單項目（主題的 first、extra 會插進來） */
 var CHECK_BASE = [
   ['必拍', '後廚師傅手工修肉', '從原肉下刀到切出一塊老饕', true],
+  ['必拍', '牛排上火→炭火→烤製→切牛排→肉汁', '照順序拍成一組連續畫面', true],
   ['必拍', '老饕粉紅切面', '一刀切開，切面對鏡頭停兩秒', true],
   ['必拍', '高溫鑄鐵石收音', '冒煙與滋滋聲，錄影時開聲音', true],
   ['畫面', '素顏第一口', '不沾醬、只配鹽之花'],
@@ -647,6 +666,11 @@ var CHECK_BASE = [
   ['畫面', '自助吧', '湯品、沙拉、冰淇淋至少兩樣'],
   ['畫面', '招牌門面與座位', '看得到店名'],
   ['結尾', '結尾必帶句', '「上清境、進日月潭前，你一定要安排這一家！」', true]
+];
+
+/* 參考影片：要加新的，照格式多加一行 [標題, 連結] */
+var REELS = [
+  ['創作者實拍範例', 'https://www.instagram.com/reel/DbqGI2YJLD2/']
 ];
 
 var STORE_KEY = 'kt-guide-v1';
@@ -662,6 +686,7 @@ function store(k, v){ try{ if(v === undefined) return localStorage.getItem(STORE
 
 [].forEach.call(document.querySelectorAll('img[data-img]'), function(im){ im.src = IMG[im.getAttribute('data-img')]; });
 $('themeCount').textContent = THEMES.length;
+$('reelList').innerHTML = REELS.map(function(r){ return '<a class="reel" href="' + esc(r[1]) + '" target="_blank" rel="noopener"><span class="pl" aria-hidden="true"></span><span><b>' + esc(r[0]) + '</b><small>Instagram Reels</small></span><span class="go">開啟</span></a>'; }).join('');
 
 /* 比例條 */
 function mid(s){ return (s.min + s.max) / 2; }
@@ -746,7 +771,7 @@ function checkItems(){
   return items;
 }
 function renderChecks(){
-  var items = checkItems(), key = 'checks-ep' + THEMES[current].n, saved = {};
+  var items = checkItems(), key = 'checks2-ep' + THEMES[current].n, saved = {};
   try{ saved = JSON.parse(store(key) || '{}') || {}; }catch(e){}
   $('checks').innerHTML = items.map(function(x, i){
     var id = 'ck' + THEMES[current].n + '_' + i;
@@ -759,7 +784,7 @@ function syncChecks(save){
   var boxes = [].slice.call($('checks').querySelectorAll('input')), state = {}, n = 0;
   boxes.forEach(function(b){ if(b.checked){ n++; state[b.getAttribute('data-i')] = 1; } });
   $('doneN').textContent = n;
-  if(save) store('checks-ep' + THEMES[current].n, JSON.stringify(state));
+  if(save) store('checks2-ep' + THEMES[current].n, JSON.stringify(state));
 }
 $('checks').addEventListener('change', function(){ syncChecks(true); });
 $('clearBtn').addEventListener('click', function(){ [].forEach.call($('checks').querySelectorAll('input'), function(b){ b.checked = false; }); syncChecks(true); });
